@@ -6,7 +6,7 @@ class Sql extends PDO {
 
 	public function __construct(){
 
-		$this->conn = new PDO("mysql:host=localhost;dbname=dbphp7", "root", "");
+		$this->conn = new PDO("mysql:host=localhost;dbname=dbphp7", "root", "asdfg123456789");
 
 	}
 
@@ -14,7 +14,7 @@ class Sql extends PDO {
 
 		foreach ($parameters as $key => $value) {
 			
-			$this->setParam($key, $value);
+			$this->setParam($statment, $key, $value);
 
 	}}
 
@@ -36,7 +36,7 @@ class Sql extends PDO {
 
 		}
 
-		public function select($rawQuery, $params = array()):array{
+		public function select($rawQuery, $params = array()){
 
 			$stmt = $this->query($rawQuery, $params);
 
